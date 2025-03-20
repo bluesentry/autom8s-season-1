@@ -9,10 +9,19 @@ logger = logging.getLogger(__name__)
 
 @dataclass
 class GitHubAPIConnection:
+    """A context manager for connecting to the GitHub API.
+
+    Usage:
+        with GitHubAPIConnection.from_token(token) as api:
+            api.get_repo(...)
+            # Use the GitHub API session here
+            pass
+    """
+
     session: str
 
     @classmethod
-    def connect_to_repo(cls, token: str):
+    def from_toekn(cls, token: str):
         auth = Auth.Token(token)
         session = Github(auth=auth)
         return cls(session)
@@ -20,5 +29,9 @@ class GitHubAPIConnection:
     def __enter__(self):
         yield self
 
-    def __exit__(self):
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        """Close the GitHub API session."""
         self.session.close()
+
+    def get_repo(self, url: str):
+        return self.session.get_repo(url)
