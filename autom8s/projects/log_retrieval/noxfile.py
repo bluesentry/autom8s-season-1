@@ -23,4 +23,7 @@ def generate_requirements(session: nox.Session, extras: list[str]):
         command += ["--extra", extras]
 
     command += ["pyproject.toml"]
+
+    # EXAMPLE
+    ## pip-compile --outupt-file requirements.txt --extra dev pyproject.toml
     session.run(*command)
