@@ -6,7 +6,7 @@ build-backend = "hatchling.build"
 packages = ["src"]
 
 [project]
-name = "TACE"
+name = "AutoM8s"
 authors = [{ name = "BSC Analytics" }]
 version = "1.0.0"
 requires-python = ">=3.13"
@@ -16,7 +16,7 @@ classifiers = [
 ]
 readme = "README.md"
 
-dependencies = ["msgraph-sdk~=1.12", "pandas~=2.2"]
+dependencies = ["PyGithub~=2.6", "pandas~=2.2"]
 
 [project.optional-dependencies]
 dev = [
