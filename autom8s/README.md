@@ -1,6 +1,19 @@
 # Goal
 
-The goal of this season is to Optimize
+Focus on `Build Performance Optimization` within the context of "challenge" project.
+
+_Outline_
+- Identify slow steps in the pipeline.
+- Detect repetitive long-running jobs.
+- Suggest caching strategies (e.g., Docker layer caching, artifact reuse).
+- Optimize compute resource allocation for efficiency.
+
+_Grading_
+- Technical Innovation (30%): How novel and effective is the AI/ML integration?
+- Accuracy & Effectiveness (25%): How well does the solution identify issues and suggest fixes?
+- Usability & Presentation (20%): Clarity of output, dashboard quality, and ease of use.
+- Cost & Performance Impact (15%): Measured improvements and cloud cost considerations.
+- Demo & Communication (10%): Effectiveness of final presentation and ability to explain the solution.
 
 ## Repo Structure
 
