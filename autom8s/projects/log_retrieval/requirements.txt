@@ -4,6 +4,8 @@
 #
 #    pip-compile --output-file=requirements.txt pyproject.toml
 #
+annotated-types==0.7.0
+    # via pydantic
 certifi==2025.1.31
     # via requests
 cffi==1.17.1
@@ -24,6 +26,10 @@ pandas==2.2.3
     # via AutoM8s (pyproject.toml)
 pycparser==2.22
     # via cffi
+pydantic==2.10.6
+    # via AutoM8s (pyproject.toml)
+pydantic-core==2.27.2
+    # via pydantic
 pygithub==2.6.1
     # via AutoM8s (pyproject.toml)
 pyjwt[crypto]==2.10.1
@@ -39,7 +45,10 @@ requests==2.32.3
 six==1.17.0
     # via python-dateutil
 typing-extensions==4.12.2
-    # via pygithub
+    # via
+    #   pydantic
+    #   pydantic-core
+    #   pygithub
 tzdata==2025.1
     # via pandas
 urllib3==2.3.0

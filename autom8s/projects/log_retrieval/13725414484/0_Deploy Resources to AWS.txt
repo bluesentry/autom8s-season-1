@@ -1,0 +1,244 @@
+2025-03-07T16:55:09.6658567Z Requested labels: ubuntu-latest
+2025-03-07T16:55:09.6658994Z Job defined at: bluesentry/ai_ml_competition_2025_0/.github/workflows/tf-plan-apply-destroy.yaml@refs/heads/gha
+2025-03-07T16:55:09.6659151Z Waiting for a runner to pick up this job...
+2025-03-07T16:55:10.5118463Z Job is waiting for a hosted runner to come online.
+2025-03-07T16:55:14.1659907Z Job is about to start running on the hosted runner: GitHub Actions 41 (hosted)
+2025-03-07T16:55:16.0855152Z Current runner version: '2.322.0'
+2025-03-07T16:55:16.0880448Z ##[group]Operating System
+2025-03-07T16:55:16.0881237Z Ubuntu
+2025-03-07T16:55:16.0881853Z 24.04.2
+2025-03-07T16:55:16.0882352Z LTS
+2025-03-07T16:55:16.0883012Z ##[endgroup]
+2025-03-07T16:55:16.0883722Z ##[group]Runner Image
+2025-03-07T16:55:16.0884318Z Image: ubuntu-24.04
+2025-03-07T16:55:16.0884886Z Version: 20250302.1.0
+2025-03-07T16:55:16.0885939Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250302.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-03-07T16:55:16.0887260Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250302.1
+2025-03-07T16:55:16.0888194Z ##[endgroup]
+2025-03-07T16:55:16.0888744Z ##[group]Runner Image Provisioner
+2025-03-07T16:55:16.0889336Z 2.0.422.1
+2025-03-07T16:55:16.0889874Z ##[endgroup]
+2025-03-07T16:55:16.0890874Z ##[group]GITHUB_TOKEN Permissions
+2025-03-07T16:55:16.0892883Z Contents: read
+2025-03-07T16:55:16.0893514Z Metadata: read
+2025-03-07T16:55:16.0894224Z ##[endgroup]
+2025-03-07T16:55:16.0897308Z Secret source: Actions
+2025-03-07T16:55:16.0898003Z Prepare workflow directory
+2025-03-07T16:55:16.1286573Z Prepare all required actions
+2025-03-07T16:55:16.1323594Z Getting action download info
+2025-03-07T16:55:16.3273519Z Download action repository 'actions/checkout@v4' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+2025-03-07T16:55:16.4107435Z Download action repository 'aws-actions/configure-aws-credentials@v2' (SHA:5fd3084fc36e372ff1fff382a39b10d03659f355)
+2025-03-07T16:55:16.6678090Z Download action repository 'hashicorp/setup-terraform@v2' (SHA:633666f66e0061ca3b725c73b2ec20cd13a8fdd1)
+2025-03-07T16:55:16.8970021Z Complete job name: Deploy Resources to AWS
+2025-03-07T16:55:16.9720134Z ##[group]Run actions/checkout@v4
+2025-03-07T16:55:16.9721041Z with:
+2025-03-07T16:55:16.9721547Z   repository: bluesentry/ai_ml_competition_2025_0
+2025-03-07T16:55:16.9722357Z   token: ***
+2025-03-07T16:55:16.9722946Z   ssh-strict: true
+2025-03-07T16:55:16.9723386Z   ssh-user: git
+2025-03-07T16:55:16.9723916Z   persist-credentials: true
+2025-03-07T16:55:16.9724412Z   clean: true
+2025-03-07T16:55:16.9724848Z   sparse-checkout-cone-mode: true
+2025-03-07T16:55:16.9725372Z   fetch-depth: 1
+2025-03-07T16:55:16.9725807Z   fetch-tags: false
+2025-03-07T16:55:16.9726257Z   show-progress: true
+2025-03-07T16:55:16.9726721Z   lfs: false
+2025-03-07T16:55:16.9727131Z   submodules: false
+2025-03-07T16:55:16.9727586Z   set-safe-directory: true
+2025-03-07T16:55:16.9728307Z env:
+2025-03-07T16:55:16.9728734Z   AWS_REGION: us-east-1
+2025-03-07T16:55:16.9729212Z   AWS_ACCOUNT_ID: 704855531002
+2025-03-07T16:55:16.9729763Z   ROLE_NAME: Github_Actions_Super_Mario_OIDC_Role
+2025-03-07T16:55:16.9730427Z ##[endgroup]
+2025-03-07T16:55:17.1659361Z Syncing repository: bluesentry/ai_ml_competition_2025_0
+2025-03-07T16:55:17.1661251Z ##[group]Getting Git version info
+2025-03-07T16:55:17.1662171Z Working directory is '/home/runner/work/ai_ml_competition_2025_0/ai_ml_competition_2025_0'
+2025-03-07T16:55:17.1663564Z [command]/usr/bin/git version
+2025-03-07T16:55:17.1771122Z git version 2.48.1
+2025-03-07T16:55:17.1801016Z ##[endgroup]
+2025-03-07T16:55:17.1815036Z Temporarily overriding HOME='/home/runner/work/_temp/d8b4cee2-6500-46a5-b866-ee1a131dab9a' before making global git config changes
+2025-03-07T16:55:17.1817990Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-07T16:55:17.1829986Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/ai_ml_competition_2025_0/ai_ml_competition_2025_0
+2025-03-07T16:55:17.1869355Z Deleting the contents of '/home/runner/work/ai_ml_competition_2025_0/ai_ml_competition_2025_0'
+2025-03-07T16:55:17.1874141Z ##[group]Initializing the repository
+2025-03-07T16:55:17.1879149Z [command]/usr/bin/git init /home/runner/work/ai_ml_competition_2025_0/ai_ml_competition_2025_0
+2025-03-07T16:55:17.1958342Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-03-07T16:55:17.1959505Z hint: is subject to change. To configure the initial branch name to use in all
+2025-03-07T16:55:17.1960735Z hint: of your new repositories, which will suppress this warning, call:
+2025-03-07T16:55:17.1961441Z hint:
+2025-03-07T16:55:17.1961973Z hint: 	git config --global init.defaultBranch <name>
+2025-03-07T16:55:17.1962583Z hint:
+2025-03-07T16:55:17.1963706Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-03-07T16:55:17.1964655Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-03-07T16:55:17.1965395Z hint:
+2025-03-07T16:55:17.1965807Z hint: 	git branch -m <name>
+2025-03-07T16:55:17.1970110Z Initialized empty Git repository in /home/runner/work/ai_ml_competition_2025_0/ai_ml_competition_2025_0/.git/
+2025-03-07T16:55:17.1981053Z [command]/usr/bin/git remote add origin https://github.com/bluesentry/ai_ml_competition_2025_0
+2025-03-07T16:55:17.2018318Z ##[endgroup]
+2025-03-07T16:55:17.2019745Z ##[group]Disabling automatic garbage collection
+2025-03-07T16:55:17.2023472Z [command]/usr/bin/git config --local gc.auto 0
+2025-03-07T16:55:17.2052991Z ##[endgroup]
+2025-03-07T16:55:17.2054491Z ##[group]Setting up auth
+2025-03-07T16:55:17.2060796Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-07T16:55:17.2092581Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-07T16:55:17.2433016Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-07T16:55:17.2462398Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-07T16:55:17.2692174Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-03-07T16:55:17.2738403Z ##[endgroup]
+2025-03-07T16:55:17.2746492Z ##[group]Fetching the repository
+2025-03-07T16:55:17.2747945Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +385f0ccd9022f65b262b86f23ecbfa3ed6207bc2:refs/remotes/origin/gha
+2025-03-07T16:55:17.5551535Z From https://github.com/bluesentry/ai_ml_competition_2025_0
+2025-03-07T16:55:17.5553449Z  * [new ref]         385f0ccd9022f65b262b86f23ecbfa3ed6207bc2 -> origin/gha
+2025-03-07T16:55:17.5579282Z ##[endgroup]
+2025-03-07T16:55:17.5580351Z ##[group]Determining the checkout info
+2025-03-07T16:55:17.5581767Z ##[endgroup]
+2025-03-07T16:55:17.5586714Z [command]/usr/bin/git sparse-checkout disable
+2025-03-07T16:55:17.5628485Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-03-07T16:55:17.5656482Z ##[group]Checking out the ref
+2025-03-07T16:55:17.5660093Z [command]/usr/bin/git checkout --progress --force -B gha refs/remotes/origin/gha
+2025-03-07T16:55:17.5726680Z Switched to a new branch 'gha'
+2025-03-07T16:55:17.5730066Z branch 'gha' set up to track 'origin/gha'.
+2025-03-07T16:55:17.5736185Z ##[endgroup]
+2025-03-07T16:55:17.5768066Z [command]/usr/bin/git log -1 --format=%H
+2025-03-07T16:55:17.5790842Z 385f0ccd9022f65b262b86f23ecbfa3ed6207bc2
+2025-03-07T16:55:17.6174771Z ##[group]Run aws-actions/configure-aws-credentials@v2
+2025-03-07T16:55:17.6176252Z with:
+2025-03-07T16:55:17.6177651Z   role-to-assume: arn:aws:iam::704855531002:role/Github_Actions_Super_Mario_OIDC_Role
+2025-03-07T16:55:17.6179430Z   aws-region: us-east-1
+2025-03-07T16:55:17.6180457Z   audience: sts.amazonaws.com
+2025-03-07T16:55:17.6181527Z env:
+2025-03-07T16:55:17.6182365Z   AWS_REGION: us-east-1
+2025-03-07T16:55:17.6183526Z   AWS_ACCOUNT_ID: 704855531002
+2025-03-07T16:55:17.6184722Z   ROLE_NAME: Github_Actions_Super_Mario_OIDC_Role
+2025-03-07T16:55:17.6186023Z ##[endgroup]
+2025-03-07T16:55:17.8285283Z (node:1856) NOTE: We are formalizing our plans to enter AWS SDK for JavaScript (v2) into maintenance mode in 2023.
+2025-03-07T16:55:17.8288466Z
+2025-03-07T16:55:17.8289274Z Please migrate your code to use AWS SDK for JavaScript (v3).
+2025-03-07T16:55:17.8291245Z For more information, check the migration guide at https://a.co/7PzMCcy
+2025-03-07T16:55:17.8293497Z (Use `node --trace-warnings ...` to show where the warning was created)
+2025-03-07T16:55:18.0305880Z ##[group]Run ls -la
+2025-03-07T16:55:18.0306937Z [36;1mls -la[0m
+2025-03-07T16:55:18.0358612Z shell: /usr/bin/bash -e {0}
+2025-03-07T16:55:18.0359668Z env:
+2025-03-07T16:55:18.0360503Z   AWS_REGION: us-east-1
+2025-03-07T16:55:18.0361741Z   AWS_ACCOUNT_ID: ***
+2025-03-07T16:55:18.0363063Z   ROLE_NAME: Github_Actions_Super_Mario_OIDC_Role
+2025-03-07T16:55:18.0364419Z   AWS_DEFAULT_REGION: us-east-1
+2025-03-07T16:55:18.0365588Z   AWS_ACCESS_KEY_ID: ***
+2025-03-07T16:55:18.0366957Z   AWS_SECRET_ACCESS_KEY: ***
+2025-03-07T16:55:18.0389034Z   AWS_SESSION_TOKEN: ***
+2025-03-07T16:55:18.0390042Z ##[endgroup]
+2025-03-07T16:55:18.0498487Z total 64
+2025-03-07T16:55:18.0500066Z drwxr-xr-x 2 runner docker  4096 Mar  7 16:55 .
+2025-03-07T16:55:18.0501534Z drwxr-xr-x 6 runner docker  4096 Mar  7 16:55 ..
+2025-03-07T16:55:18.0504037Z -rw-r--r-- 1 runner docker   186 Mar  7 16:55 backend.tf
+2025-03-07T16:55:18.0506353Z -rw-r--r-- 1 runner docker   526 Mar  7 16:55 ecr.tf
+2025-03-07T16:55:18.0508864Z -rw-r--r-- 1 runner docker  2955 Mar  7 16:55 eks.tf
+2025-03-07T16:55:18.0511370Z -rw-r--r-- 1 runner docker   463 Mar  7 16:55 github_secrets.tf
+2025-03-07T16:55:18.0514175Z -rw-r--r-- 1 runner docker 11189 Mar  7 16:55 k8s.tf
+2025-03-07T16:55:18.0516498Z -rw-r--r-- 1 runner docker   810 Mar  7 16:55 local.tf
+2025-03-07T16:55:18.0518260Z -rw-r--r-- 1 runner docker  3294 Mar  7 16:55 oidc_provider.tf
+2025-03-07T16:55:18.0519776Z -rw-r--r-- 1 runner docker   186 Mar  7 16:55 output.tf
+2025-03-07T16:55:18.0521250Z -rw-r--r-- 1 runner docker   284 Mar  7 16:55 terraform.tfvars
+2025-03-07T16:55:18.0522987Z -rw-r--r-- 1 runner docker  1281 Mar  7 16:55 variables.tf
+2025-03-07T16:55:18.0524457Z -rw-r--r-- 1 runner docker   335 Mar  7 16:55 versions.tf
+2025-03-07T16:55:18.0525881Z -rw-r--r-- 1 runner docker  1925 Mar  7 16:55 vpc.tf
+2025-03-07T16:55:18.0619099Z ##[group]Run hashicorp/setup-terraform@v2
+2025-03-07T16:55:18.0620267Z with:
+2025-03-07T16:55:18.0621219Z   cli_config_credentials_hostname: app.terraform.io
+2025-03-07T16:55:18.0622484Z   terraform_version: latest
+2025-03-07T16:55:18.0623625Z   terraform_wrapper: true
+2025-03-07T16:55:18.0624562Z env:
+2025-03-07T16:55:18.0625359Z   AWS_REGION: us-east-1
+2025-03-07T16:55:18.0626378Z   AWS_ACCOUNT_ID: ***
+2025-03-07T16:55:18.0627431Z   ROLE_NAME: Github_Actions_Super_Mario_OIDC_Role
+2025-03-07T16:55:18.0628676Z   AWS_DEFAULT_REGION: us-east-1
+2025-03-07T16:55:18.0629789Z   AWS_ACCESS_KEY_ID: ***
+2025-03-07T16:55:18.0631063Z   AWS_SECRET_ACCESS_KEY: ***
+2025-03-07T16:55:18.0650796Z   AWS_SESSION_TOKEN: ***
+2025-03-07T16:55:18.0651760Z ##[endgroup]
+2025-03-07T16:55:18.4203113Z [command]/usr/bin/unzip -o -q /home/runner/work/_temp/b0b63297-3f52-46a8-81c9-f053618ae9bd
+2025-03-07T16:55:19.0354900Z ##[group]Run GITHUB_IPS=$(curl -s https://api.ipify.org )
+2025-03-07T16:55:19.0356520Z [36;1mGITHUB_IPS=$(curl -s https://api.ipify.org )[0m
+2025-03-07T16:55:19.0357945Z [36;1meksctl utils update-cluster-vpc-config \[0m
+2025-03-07T16:55:19.0359241Z [36;1m  --cluster smarthire \[0m
+2025-03-07T16:55:19.0360319Z [36;1m  --region us-east-1 \[0m
+2025-03-07T16:55:19.0361509Z [36;1m  --public-access-cidrs "${GITHUB_IPS}/32" \[0m
+2025-03-07T16:55:19.0362902Z [36;1m  --approve || true[0m
+2025-03-07T16:55:19.0416249Z shell: /usr/bin/bash -e {0}
+2025-03-07T16:55:19.0417263Z env:
+2025-03-07T16:55:19.0418067Z   AWS_REGION: us-east-1
+2025-03-07T16:55:19.0419191Z   AWS_ACCOUNT_ID: ***
+2025-03-07T16:55:19.0420247Z   ROLE_NAME: Github_Actions_Super_Mario_OIDC_Role
+2025-03-07T16:55:19.0421486Z   AWS_DEFAULT_REGION: us-east-1
+2025-03-07T16:55:19.0422598Z   AWS_ACCESS_KEY_ID: ***
+2025-03-07T16:55:19.0424058Z   AWS_SECRET_ACCESS_KEY: ***
+2025-03-07T16:55:19.0443262Z   AWS_SESSION_TOKEN: ***
+2025-03-07T16:55:19.0445013Z   TERRAFORM_CLI_PATH: /home/runner/work/_temp/f56f9817-eac7-4e81-9893-9a1bfcf3003c
+2025-03-07T16:55:19.0446538Z ##[endgroup]
+2025-03-07T16:55:19.1255942Z /home/runner/work/_temp/88353e72-8c88-4a48-b219-ebf3dd5d494b.sh: line 2: eksctl: command not found
+2025-03-07T16:55:19.1314772Z ##[group]Run terraform init -reconfigure
+2025-03-07T16:55:19.1315990Z [36;1mterraform init -reconfigure[0m
+2025-03-07T16:55:19.1367485Z shell: /usr/bin/bash -e {0}
+2025-03-07T16:55:19.1368452Z env:
+2025-03-07T16:55:19.1369238Z   AWS_REGION: us-east-1
+2025-03-07T16:55:19.1370257Z   AWS_ACCOUNT_ID: ***
+2025-03-07T16:55:19.1371285Z   ROLE_NAME: Github_Actions_Super_Mario_OIDC_Role
+2025-03-07T16:55:19.1372472Z   AWS_DEFAULT_REGION: us-east-1
+2025-03-07T16:55:19.1373818Z   AWS_ACCESS_KEY_ID: ***
+2025-03-07T16:55:19.1375052Z   AWS_SECRET_ACCESS_KEY: ***
+2025-03-07T16:55:19.1393857Z   AWS_SESSION_TOKEN: ***
+2025-03-07T16:55:19.1395232Z   TERRAFORM_CLI_PATH: /home/runner/work/_temp/f56f9817-eac7-4e81-9893-9a1bfcf3003c
+2025-03-07T16:55:19.1396754Z ##[endgroup]
+2025-03-07T16:55:19.3105898Z [command]/home/runner/work/_temp/f56f9817-eac7-4e81-9893-9a1bfcf3003c/terraform-bin init -reconfigure
+2025-03-07T16:55:19.3498293Z [0m[1mInitializing the backend...[0m
+2025-03-07T16:55:19.5580612Z [0m[32m
+2025-03-07T16:55:19.5583079Z Successfully configured the backend "s3"! Terraform will automatically
+2025-03-07T16:55:19.5586313Z use this backend unless the backend configuration changes.[0m
+2025-03-07T16:55:19.8348144Z [0m[1mInitializing modules...[0m
+2025-03-07T16:55:19.9020235Z Downloading registry.terraform.io/terraform-aws-modules/iam/aws 5.52.2 for ebs_csi_irsa_role...
+2025-03-07T16:55:20.1876511Z - ebs_csi_irsa_role in .terraform/modules/ebs_csi_irsa_role/modules/iam-role-for-service-accounts-eks
+2025-03-07T16:55:20.1926926Z Downloading registry.terraform.io/terraform-aws-modules/ecr/aws 2.3.1 for ecr...
+2025-03-07T16:55:20.3583361Z - ecr in .terraform/modules/ecr
+2025-03-07T16:55:20.3590774Z Downloading registry.terraform.io/terraform-aws-modules/iam/aws 5.52.2 for efs_csi_irsa_role...
+2025-03-07T16:55:20.3909964Z - efs_csi_irsa_role in .terraform/modules/efs_csi_irsa_role/modules/iam-role-for-service-accounts-eks
+2025-03-07T16:55:20.3981842Z Downloading registry.terraform.io/terraform-aws-modules/eks/aws 20.31.6 for eks...
+2025-03-07T16:55:20.8043806Z - eks in .terraform/modules/eks
+2025-03-07T16:55:20.8124108Z - eks.eks_managed_node_group in .terraform/modules/eks/modules/eks-managed-node-group
+2025-03-07T16:55:20.8153608Z - eks.eks_managed_node_group.user_data in .terraform/modules/eks/modules/_user_data
+2025-03-07T16:55:20.8172999Z - eks.fargate_profile in .terraform/modules/eks/modules/fargate-profile
+2025-03-07T16:55:20.8203473Z Downloading registry.terraform.io/terraform-aws-modules/kms/aws 2.1.0 for eks.kms...
+2025-03-07T16:55:20.9892270Z - eks.kms in .terraform/modules/eks.kms
+2025-03-07T16:55:20.9983095Z - eks.self_managed_node_group in .terraform/modules/eks/modules/self-managed-node-group
+2025-03-07T16:55:20.9987775Z - eks.self_managed_node_group.user_data in .terraform/modules/eks/modules/_user_data
+2025-03-07T16:55:21.0034758Z Downloading registry.terraform.io/terraform-aws-modules/vpc/aws 5.17.0 for vpc...
+2025-03-07T16:55:21.3013332Z - vpc in .terraform/modules/vpc
+2025-03-07T16:55:21.3022255Z Downloading registry.terraform.io/terraform-aws-modules/vpc/aws 5.17.0 for vpc_endpoints...
+2025-03-07T16:55:21.3089759Z - vpc_endpoints in .terraform/modules/vpc_endpoints/modules/vpc-endpoints
+2025-03-07T16:55:21.3097535Z [31m╷[0m[0m
+2025-03-07T16:55:21.3098343Z [31m│[0m [0m[1m[31mError: [0m[0m[1mUnsupported Terraform Core version[0m
+2025-03-07T16:55:21.3099030Z [31m│[0m [0m
+2025-03-07T16:55:21.3099564Z [31m│[0m [0m[0m  on versions.tf line 20, in terraform:
+2025-03-07T16:55:21.3100273Z [31m│[0m [0m  20:   [4mrequired_version = "=1.11.0"[0m[0m
+2025-03-07T16:55:21.3100823Z [31m│[0m [0m
+2025-03-07T16:55:21.3101587Z [31m│[0m [0mThis configuration does not support Terraform version 1.11.1. To proceed,
+2025-03-07T16:55:21.3103197Z [31m│[0m [0meither choose another supported Terraform version or update this version
+2025-03-07T16:55:21.3104238Z [31m│[0m [0mconstraint. Version constraints are normally set for good reason, so
+2025-03-07T16:55:21.3105562Z [31m│[0m [0mupdating the constraint may lead to other errors or unexpected behavior.
+2025-03-07T16:55:21.3106359Z [31m╵[0m[0m
+2025-03-07T16:55:21.3187197Z ##[error]Terraform exited with code 1.
+2025-03-07T16:55:21.3225842Z ##[error]Process completed with exit code 1.
+2025-03-07T16:55:21.3312046Z Post job cleanup.
+2025-03-07T16:55:21.3772120Z Post job cleanup.
+2025-03-07T16:55:21.4706060Z [command]/usr/bin/git version
+2025-03-07T16:55:21.4742991Z git version 2.48.1
+2025-03-07T16:55:21.4787334Z Temporarily overriding HOME='/home/runner/work/_temp/9897dc59-46cc-4473-a8a7-e989d92f9e3f' before making global git config changes
+2025-03-07T16:55:21.4788695Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-07T16:55:21.4794394Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/ai_ml_competition_2025_0/ai_ml_competition_2025_0
+2025-03-07T16:55:21.4831301Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-07T16:55:21.4863692Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-07T16:55:21.5107425Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-07T16:55:21.5128295Z http.https://github.com/.extraheader
+2025-03-07T16:55:21.5140805Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-03-07T16:55:21.5170913Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-07T16:55:21.5498057Z Cleaning up orphan processes

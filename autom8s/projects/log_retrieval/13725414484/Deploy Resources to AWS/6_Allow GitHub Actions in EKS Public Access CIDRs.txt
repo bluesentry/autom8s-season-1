@@ -1,0 +1,19 @@
+2025-03-07T16:55:19.0354861Z ##[group]Run GITHUB_IPS=$(curl -s https://api.ipify.org )
+2025-03-07T16:55:19.0356515Z [36;1mGITHUB_IPS=$(curl -s https://api.ipify.org )[0m
+2025-03-07T16:55:19.0357940Z [36;1meksctl utils update-cluster-vpc-config \[0m
+2025-03-07T16:55:19.0359236Z [36;1m  --cluster smarthire \[0m
+2025-03-07T16:55:19.0360314Z [36;1m  --region us-east-1 \[0m
+2025-03-07T16:55:19.0361504Z [36;1m  --public-access-cidrs "${GITHUB_IPS}/32" \[0m
+2025-03-07T16:55:19.0362897Z [36;1m  --approve || true[0m
+2025-03-07T16:55:19.0416209Z shell: /usr/bin/bash -e {0}
+2025-03-07T16:55:19.0417258Z env:
+2025-03-07T16:55:19.0418062Z   AWS_REGION: us-east-1
+2025-03-07T16:55:19.0419186Z   AWS_ACCOUNT_ID: ***
+2025-03-07T16:55:19.0420241Z   ROLE_NAME: Github_Actions_Super_Mario_OIDC_Role
+2025-03-07T16:55:19.0421481Z   AWS_DEFAULT_REGION: us-east-1
+2025-03-07T16:55:19.0422585Z   AWS_ACCESS_KEY_ID: ***
+2025-03-07T16:55:19.0424049Z   AWS_SECRET_ACCESS_KEY: ***
+2025-03-07T16:55:19.0443207Z   AWS_SESSION_TOKEN: ***
+2025-03-07T16:55:19.0445005Z   TERRAFORM_CLI_PATH: /home/runner/work/_temp/f56f9817-eac7-4e81-9893-9a1bfcf3003c
+2025-03-07T16:55:19.0446534Z ##[endgroup]
+2025-03-07T16:55:19.1255857Z /home/runner/work/_temp/88353e72-8c88-4a48-b219-ebf3dd5d494b.sh: line 2: eksctl: command not found

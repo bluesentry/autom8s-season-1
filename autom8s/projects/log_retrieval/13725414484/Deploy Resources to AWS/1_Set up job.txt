@@ -1,0 +1,27 @@
+2025-03-07T16:55:16.0854428Z Current runner version: '2.322.0'
+2025-03-07T16:55:16.0880425Z ##[group]Operating System
+2025-03-07T16:55:16.0881232Z Ubuntu
+2025-03-07T16:55:16.0881848Z 24.04.2
+2025-03-07T16:55:16.0882314Z LTS
+2025-03-07T16:55:16.0883003Z ##[endgroup]
+2025-03-07T16:55:16.0883717Z ##[group]Runner Image
+2025-03-07T16:55:16.0884314Z Image: ubuntu-24.04
+2025-03-07T16:55:16.0884882Z Version: 20250302.1.0
+2025-03-07T16:55:16.0885935Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250302.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-03-07T16:55:16.0887256Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250302.1
+2025-03-07T16:55:16.0888190Z ##[endgroup]
+2025-03-07T16:55:16.0888740Z ##[group]Runner Image Provisioner
+2025-03-07T16:55:16.0889332Z 2.0.422.1
+2025-03-07T16:55:16.0889869Z ##[endgroup]
+2025-03-07T16:55:16.0890870Z ##[group]GITHUB_TOKEN Permissions
+2025-03-07T16:55:16.0892862Z Contents: read
+2025-03-07T16:55:16.0893511Z Metadata: read
+2025-03-07T16:55:16.0894085Z ##[endgroup]
+2025-03-07T16:55:16.0897287Z Secret source: Actions
+2025-03-07T16:55:16.0897998Z Prepare workflow directory
+2025-03-07T16:55:16.1286539Z Prepare all required actions
+2025-03-07T16:55:16.1323529Z Getting action download info
+2025-03-07T16:55:16.3273484Z Download action repository 'actions/checkout@v4' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+2025-03-07T16:55:16.4107410Z Download action repository 'aws-actions/configure-aws-credentials@v2' (SHA:5fd3084fc36e372ff1fff382a39b10d03659f355)
+2025-03-07T16:55:16.6678062Z Download action repository 'hashicorp/setup-terraform@v2' (SHA:633666f66e0061ca3b725c73b2ec20cd13a8fdd1)
+2025-03-07T16:55:16.8969987Z Complete job name: Deploy Resources to AWS

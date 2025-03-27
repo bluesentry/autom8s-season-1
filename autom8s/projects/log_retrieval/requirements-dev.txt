@@ -4,6 +4,8 @@
 #
 #    pip-compile --extra=dev --output-file=requirements-dev.txt pyproject.toml
 #
+annotated-types==0.7.0
+    # via pydantic
 argcomplete==3.6.0
     # via nox
 attrs==25.3.0
@@ -68,6 +70,10 @@ pre-commit==4.2.0
     # via AutoM8s (pyproject.toml)
 pycparser==2.22
     # via cffi
+pydantic==2.10.6
+    # via AutoM8s (pyproject.toml)
+pydantic-core==2.27.2
+    # via pydantic
 pygithub==2.6.1
     # via AutoM8s (pyproject.toml)
 pyjwt[crypto]==2.10.1
@@ -95,7 +101,10 @@ six==1.17.0
 toml==0.10.2
     # via AutoM8s (pyproject.toml)
 typing-extensions==4.12.2
-    # via pygithub
+    # via
+    #   pydantic
+    #   pydantic-core
+    #   pygithub
 tzdata==2025.1
     # via pandas
 untokenize==0.1.1

@@ -1,0 +1,51 @@
+2025-03-07T16:55:19.1314748Z ##[group]Run terraform init -reconfigure
+2025-03-07T16:55:19.1315984Z [36;1mterraform init -reconfigure[0m
+2025-03-07T16:55:19.1367470Z shell: /usr/bin/bash -e {0}
+2025-03-07T16:55:19.1368440Z env:
+2025-03-07T16:55:19.1369234Z   AWS_REGION: us-east-1
+2025-03-07T16:55:19.1370253Z   AWS_ACCOUNT_ID: ***
+2025-03-07T16:55:19.1371280Z   ROLE_NAME: Github_Actions_Super_Mario_OIDC_Role
+2025-03-07T16:55:19.1372467Z   AWS_DEFAULT_REGION: us-east-1
+2025-03-07T16:55:19.1373811Z   AWS_ACCESS_KEY_ID: ***
+2025-03-07T16:55:19.1375047Z   AWS_SECRET_ACCESS_KEY: ***
+2025-03-07T16:55:19.1393849Z   AWS_SESSION_TOKEN: ***
+2025-03-07T16:55:19.1395225Z   TERRAFORM_CLI_PATH: /home/runner/work/_temp/f56f9817-eac7-4e81-9893-9a1bfcf3003c
+2025-03-07T16:55:19.1396744Z ##[endgroup]
+2025-03-07T16:55:19.3105841Z [command]/home/runner/work/_temp/f56f9817-eac7-4e81-9893-9a1bfcf3003c/terraform-bin init -reconfigure
+2025-03-07T16:55:19.3498256Z [0m[1mInitializing the backend...[0m
+2025-03-07T16:55:19.5580441Z [0m[32m
+2025-03-07T16:55:19.5583056Z Successfully configured the backend "s3"! Terraform will automatically
+2025-03-07T16:55:19.5586291Z use this backend unless the backend configuration changes.[0m
+2025-03-07T16:55:19.8348090Z [0m[1mInitializing modules...[0m
+2025-03-07T16:55:19.9020167Z Downloading registry.terraform.io/terraform-aws-modules/iam/aws 5.52.2 for ebs_csi_irsa_role...
+2025-03-07T16:55:20.1876457Z - ebs_csi_irsa_role in .terraform/modules/ebs_csi_irsa_role/modules/iam-role-for-service-accounts-eks
+2025-03-07T16:55:20.1926892Z Downloading registry.terraform.io/terraform-aws-modules/ecr/aws 2.3.1 for ecr...
+2025-03-07T16:55:20.3583300Z - ecr in .terraform/modules/ecr
+2025-03-07T16:55:20.3590723Z Downloading registry.terraform.io/terraform-aws-modules/iam/aws 5.52.2 for efs_csi_irsa_role...
+2025-03-07T16:55:20.3909904Z - efs_csi_irsa_role in .terraform/modules/efs_csi_irsa_role/modules/iam-role-for-service-accounts-eks
+2025-03-07T16:55:20.3981788Z Downloading registry.terraform.io/terraform-aws-modules/eks/aws 20.31.6 for eks...
+2025-03-07T16:55:20.8043745Z - eks in .terraform/modules/eks
+2025-03-07T16:55:20.8123976Z - eks.eks_managed_node_group in .terraform/modules/eks/modules/eks-managed-node-group
+2025-03-07T16:55:20.8153589Z - eks.eks_managed_node_group.user_data in .terraform/modules/eks/modules/_user_data
+2025-03-07T16:55:20.8172985Z - eks.fargate_profile in .terraform/modules/eks/modules/fargate-profile
+2025-03-07T16:55:20.8203456Z Downloading registry.terraform.io/terraform-aws-modules/kms/aws 2.1.0 for eks.kms...
+2025-03-07T16:55:20.9892232Z - eks.kms in .terraform/modules/eks.kms
+2025-03-07T16:55:20.9983067Z - eks.self_managed_node_group in .terraform/modules/eks/modules/self-managed-node-group
+2025-03-07T16:55:20.9987760Z - eks.self_managed_node_group.user_data in .terraform/modules/eks/modules/_user_data
+2025-03-07T16:55:21.0034742Z Downloading registry.terraform.io/terraform-aws-modules/vpc/aws 5.17.0 for vpc...
+2025-03-07T16:55:21.3013290Z - vpc in .terraform/modules/vpc
+2025-03-07T16:55:21.3022199Z Downloading registry.terraform.io/terraform-aws-modules/vpc/aws 5.17.0 for vpc_endpoints...
+2025-03-07T16:55:21.3089743Z - vpc_endpoints in .terraform/modules/vpc_endpoints/modules/vpc-endpoints
+2025-03-07T16:55:21.3097519Z [31m╷[0m[0m
+2025-03-07T16:55:21.3098337Z [31m│[0m [0m[1m[31mError: [0m[0m[1mUnsupported Terraform Core version[0m
+2025-03-07T16:55:21.3099026Z [31m│[0m [0m
+2025-03-07T16:55:21.3099560Z [31m│[0m [0m[0m  on versions.tf line 20, in terraform:
+2025-03-07T16:55:21.3100268Z [31m│[0m [0m  20:   [4mrequired_version = "=1.11.0"[0m[0m
+2025-03-07T16:55:21.3100818Z [31m│[0m [0m
+2025-03-07T16:55:21.3101581Z [31m│[0m [0mThis configuration does not support Terraform version 1.11.1. To proceed,
+2025-03-07T16:55:21.3103190Z [31m│[0m [0meither choose another supported Terraform version or update this version
+2025-03-07T16:55:21.3104233Z [31m│[0m [0mconstraint. Version constraints are normally set for good reason, so
+2025-03-07T16:55:21.3105325Z [31m│[0m [0mupdating the constraint may lead to other errors or unexpected behavior.
+2025-03-07T16:55:21.3106354Z [31m╵[0m[0m
+2025-03-07T16:55:21.3187182Z ##[error]Terraform exited with code 1.
+2025-03-07T16:55:21.3225829Z ##[error]Process completed with exit code 1.

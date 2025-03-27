@@ -1,0 +1,229 @@
+2025-03-06T20:15:06.0185666Z Requested labels: ubuntu-latest
+2025-03-06T20:15:06.0185870Z Job defined at: bluesentry/ai_ml_competition_2025_0/.github/workflows/tf-plan-apply-destroy.yaml@refs/heads/main
+2025-03-06T20:15:06.0185986Z Waiting for a runner to pick up this job...
+2025-03-06T20:15:06.7762628Z Job is waiting for a hosted runner to come online.
+2025-03-06T20:15:09.6775553Z Job is about to start running on the hosted runner: GitHub Actions 34 (hosted)
+2025-03-06T20:15:12.2478764Z Current runner version: '2.322.0'
+2025-03-06T20:15:12.2507507Z ##[group]Operating System
+2025-03-06T20:15:12.2508576Z Ubuntu
+2025-03-06T20:15:12.2509120Z 24.04.2
+2025-03-06T20:15:12.2509606Z LTS
+2025-03-06T20:15:12.2510130Z ##[endgroup]
+2025-03-06T20:15:12.2510696Z ##[group]Runner Image
+2025-03-06T20:15:12.2511276Z Image: ubuntu-24.04
+2025-03-06T20:15:12.2511870Z Version: 20250302.1.0
+2025-03-06T20:15:12.2512916Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250302.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-03-06T20:15:12.2514271Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250302.1
+2025-03-06T20:15:12.2515252Z ##[endgroup]
+2025-03-06T20:15:12.2515809Z ##[group]Runner Image Provisioner
+2025-03-06T20:15:12.2516407Z 2.0.422.1
+2025-03-06T20:15:12.2516984Z ##[endgroup]
+2025-03-06T20:15:12.2519341Z ##[group]GITHUB_TOKEN Permissions
+2025-03-06T20:15:12.2521535Z Actions: write
+2025-03-06T20:15:12.2522305Z Attestations: write
+2025-03-06T20:15:12.2523003Z Checks: write
+2025-03-06T20:15:12.2523519Z Contents: write
+2025-03-06T20:15:12.2524094Z Deployments: write
+2025-03-06T20:15:12.2524638Z Discussions: write
+2025-03-06T20:15:12.2525179Z Issues: write
+2025-03-06T20:15:12.2525680Z Metadata: read
+2025-03-06T20:15:12.2526211Z Packages: write
+2025-03-06T20:15:12.2526743Z Pages: write
+2025-03-06T20:15:12.2527303Z PullRequests: write
+2025-03-06T20:15:12.2527858Z RepositoryProjects: write
+2025-03-06T20:15:12.2528646Z SecurityEvents: write
+2025-03-06T20:15:12.2529270Z Statuses: write
+2025-03-06T20:15:12.2529785Z ##[endgroup]
+2025-03-06T20:15:12.2532921Z Secret source: Actions
+2025-03-06T20:15:12.2533964Z Prepare workflow directory
+2025-03-06T20:15:12.3043118Z Prepare all required actions
+2025-03-06T20:15:12.3082032Z Getting action download info
+2025-03-06T20:15:12.5811671Z Download action repository 'actions/checkout@v4' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+2025-03-06T20:15:12.6945882Z Download action repository 'aws-actions/configure-aws-credentials@v2' (SHA:5fd3084fc36e372ff1fff382a39b10d03659f355)
+2025-03-06T20:15:13.2010363Z Download action repository 'hashicorp/setup-terraform@v2' (SHA:633666f66e0061ca3b725c73b2ec20cd13a8fdd1)
+2025-03-06T20:15:13.6304277Z Download action repository 'hashicorp/terraform-github-actions@master' (SHA:ae0d973bfdc4c81f01bc1de81109bba33e148f41)
+2025-03-06T20:15:14.2407567Z Complete job name: Deploy Resources to AWS
+2025-03-06T20:15:14.2934334Z ##[group]Build container for action use: '/home/runner/work/_actions/hashicorp/terraform-github-actions/master/./Dockerfile'.
+2025-03-06T20:15:14.2993035Z ##[command]/usr/bin/docker build -t 28c583:d95b191d1150480dade09602b8014a59 -f "/home/runner/work/_actions/hashicorp/terraform-github-actions/master/./Dockerfile" "/home/runner/work/_actions/hashicorp/terraform-github-actions/master"
+2025-03-06T20:15:14.8508159Z #0 building with "default" instance using docker driver
+2025-03-06T20:15:14.8509685Z
+2025-03-06T20:15:14.8510190Z #1 [internal] load build definition from Dockerfile
+2025-03-06T20:15:14.8511464Z #1 transferring dockerfile: 201B done
+2025-03-06T20:15:14.8512474Z #1 DONE 0.0s
+2025-03-06T20:15:14.8512923Z
+2025-03-06T20:15:14.8513469Z #2 [internal] load metadata for docker.io/library/alpine:3
+2025-03-06T20:15:15.0906829Z #2 ...
+2025-03-06T20:15:15.0907510Z
+2025-03-06T20:15:15.0908485Z #3 [auth] library/alpine:pull token for registry-1.docker.io
+2025-03-06T20:15:15.0910134Z #3 DONE 0.0s
+2025-03-06T20:15:15.2399097Z
+2025-03-06T20:15:15.2399367Z #2 [internal] load metadata for docker.io/library/alpine:3
+2025-03-06T20:15:15.7221265Z #2 DONE 1.0s
+2025-03-06T20:15:15.8445917Z
+2025-03-06T20:15:15.8446436Z #4 [internal] load .dockerignore
+2025-03-06T20:15:15.8446979Z #4 transferring context: 2B done
+2025-03-06T20:15:15.8447321Z #4 DONE 0.0s
+2025-03-06T20:15:15.8447477Z
+2025-03-06T20:15:15.8447612Z #5 [internal] load build context
+2025-03-06T20:15:15.8447949Z #5 transferring context: 21.50kB done
+2025-03-06T20:15:15.8448621Z #5 DONE 0.0s
+2025-03-06T20:15:15.8448787Z
+2025-03-06T20:15:15.8449604Z #6 [1/3] FROM docker.io/library/alpine:3@sha256:a8560b36e8b8210634f77d9f7f9efd7ffa463e380b75e2e74aff4511df3ef88c
+2025-03-06T20:15:15.8450521Z #6 resolve docker.io/library/alpine:3@sha256:a8560b36e8b8210634f77d9f7f9efd7ffa463e380b75e2e74aff4511df3ef88c done
+2025-03-06T20:15:15.8451384Z #6 sha256:a8560b36e8b8210634f77d9f7f9efd7ffa463e380b75e2e74aff4511df3ef88c 9.22kB / 9.22kB done
+2025-03-06T20:15:15.8452192Z #6 sha256:1c4eef651f65e2f7daee7ee785882ac164b02b78fb74503052a26dc061c90474 1.02kB / 1.02kB done
+2025-03-06T20:15:15.8452956Z #6 sha256:aded1e1a5b3705116fa0a92ba074a5e0b0031647d9c315983ccba2ee5428ec8b 581B / 581B done
+2025-03-06T20:15:15.8453682Z #6 sha256:f18232174bc91741fdf3da96d85011092101a032a93a388b79e99e69c2d5c870 0B / 3.64MB 0.1s
+2025-03-06T20:15:15.9990420Z #6 sha256:f18232174bc91741fdf3da96d85011092101a032a93a388b79e99e69c2d5c870 2.10MB / 3.64MB 0.2s
+2025-03-06T20:15:15.9991527Z #6 extracting sha256:f18232174bc91741fdf3da96d85011092101a032a93a388b79e99e69c2d5c870
+2025-03-06T20:15:16.1132328Z #6 sha256:f18232174bc91741fdf3da96d85011092101a032a93a388b79e99e69c2d5c870 3.64MB / 3.64MB 0.3s done
+2025-03-06T20:15:16.1133524Z #6 extracting sha256:f18232174bc91741fdf3da96d85011092101a032a93a388b79e99e69c2d5c870 0.1s done
+2025-03-06T20:15:16.1134084Z #6 DONE 0.4s
+2025-03-06T20:15:16.2652936Z
+2025-03-06T20:15:16.2654052Z #7 [2/3] RUN ["/bin/sh", "-c", "apk add --update --no-cache bash ca-certificates curl git jq openssh"]
+2025-03-06T20:15:16.2796763Z #7 0.165 fetch https://dl-cdn.alpinelinux.org/alpine/v3.21/main/x86_64/APKINDEX.tar.gz
+2025-03-06T20:15:16.4962565Z #7 0.231 fetch https://dl-cdn.alpinelinux.org/alpine/v3.21/community/x86_64/APKINDEX.tar.gz
+2025-03-06T20:15:16.6214202Z #7 0.506 (1/28) Installing ncurses-terminfo-base (6.5_p20241006-r3)
+2025-03-06T20:15:16.7332868Z #7 0.512 (2/28) Installing libncursesw (6.5_p20241006-r3)
+2025-03-06T20:15:16.7333299Z #7 0.517 (3/28) Installing readline (8.2.13-r0)
+2025-03-06T20:15:16.7333667Z #7 0.521 (4/28) Installing bash (5.2.37-r0)
+2025-03-06T20:15:16.7333980Z #7 0.534 Executing bash-5.2.37-r0.post-install
+2025-03-06T20:15:16.7334407Z #7 0.537 (5/28) Installing ca-certificates (20241121-r1)
+2025-03-06T20:15:16.7334734Z #7 0.555 (6/28) Installing brotli-libs (1.1.0-r2)
+2025-03-06T20:15:16.7335023Z #7 0.564 (7/28) Installing c-ares (1.34.3-r0)
+2025-03-06T20:15:16.7335310Z #7 0.567 (8/28) Installing libunistring (1.2-r0)
+2025-03-06T20:15:16.7335860Z #7 0.578 (9/28) Installing libidn2 (2.3.7-r0)
+2025-03-06T20:15:16.7336152Z #7 0.581 (10/28) Installing nghttp2-libs (1.64.0-r0)
+2025-03-06T20:15:16.7336441Z #7 0.585 (11/28) Installing libpsl (0.21.5-r3)
+2025-03-06T20:15:16.7336708Z #7 0.594 (12/28) Installing zstd-libs (1.5.6-r2)
+2025-03-06T20:15:16.7336987Z #7 0.618 (13/28) Installing libcurl (8.12.1-r0)
+2025-03-06T20:15:16.8335796Z #7 0.625 (14/28) Installing curl (8.12.1-r0)
+2025-03-06T20:15:16.8336280Z #7 0.628 (15/28) Installing libexpat (2.6.4-r0)
+2025-03-06T20:15:16.8336655Z #7 0.631 (16/28) Installing pcre2 (10.43-r0)
+2025-03-06T20:15:16.8336972Z #7 0.637 (17/28) Installing git (2.47.2-r0)
+2025-03-06T20:15:16.8337358Z #7 0.700 (18/28) Installing git-init-template (2.47.2-r0)
+2025-03-06T20:15:16.8337726Z #7 0.702 (19/28) Installing oniguruma (6.9.9-r0)
+2025-03-06T20:15:16.8338295Z #7 0.707 (20/28) Installing jq (1.7.1-r0)
+2025-03-06T20:15:16.8338636Z #7 0.714 (21/28) Installing openssh-keygen (9.9_p2-r0)
+2025-03-06T20:15:16.8339013Z #7 0.719 (22/28) Installing libedit (20240808.3.1-r0)
+2025-03-06T20:15:17.0562487Z #7 0.722 (23/28) Installing openssh-client-common (9.9_p2-r0)
+2025-03-06T20:15:17.0563409Z #7 0.738 (24/28) Installing openssh-client-default (9.9_p2-r0)
+2025-03-06T20:15:17.0564140Z #7 0.745 (25/28) Installing openssh-sftp-server (9.9_p2-r0)
+2025-03-06T20:15:17.0564610Z #7 0.748 (26/28) Installing openssh-server-common (9.9_p2-r0)
+2025-03-06T20:15:17.0564981Z #7 0.750 (27/28) Installing openssh-server (9.9_p2-r0)
+2025-03-06T20:15:17.0565311Z #7 0.761 (28/28) Installing openssh (9.9_p2-r0)
+2025-03-06T20:15:17.0565631Z #7 0.766 Executing busybox-1.37.0-r12.trigger
+2025-03-06T20:15:17.0566284Z #7 0.771 Executing ca-certificates-20241121-r1.trigger
+2025-03-06T20:15:17.0566635Z #7 0.811 OK: 28 MiB in 43 packages
+2025-03-06T20:15:17.0566883Z #7 DONE 0.9s
+2025-03-06T20:15:17.2366705Z
+2025-03-06T20:15:17.2366948Z #8 [3/3] COPY [src, /src/]
+2025-03-06T20:15:17.2367451Z #8 DONE 0.0s
+2025-03-06T20:15:17.2367674Z
+2025-03-06T20:15:17.2367848Z #9 exporting to image
+2025-03-06T20:15:17.2368307Z #9 exporting layers
+2025-03-06T20:15:18.0110392Z #9 exporting layers 0.9s done
+2025-03-06T20:15:18.0406818Z #9 writing image sha256:6d312cd49efdd84291f661ed6dd70de1bfad4ebb0ef0bd767bcca4e7eb528e16 done
+2025-03-06T20:15:18.0407918Z #9 naming to docker.io/library/28c583:d95b191d1150480dade09602b8014a59 done
+2025-03-06T20:15:18.0408746Z #9 DONE 0.9s
+2025-03-06T20:15:18.0464577Z ##[endgroup]
+2025-03-06T20:15:18.0780260Z ##[group]Run actions/checkout@v4
+2025-03-06T20:15:18.0780796Z with:
+2025-03-06T20:15:18.0781043Z   repository: bluesentry/ai_ml_competition_2025_0
+2025-03-06T20:15:18.0781541Z   token: ***
+2025-03-06T20:15:18.0781732Z   ssh-strict: true
+2025-03-06T20:15:18.0781920Z   ssh-user: git
+2025-03-06T20:15:18.0782115Z   persist-credentials: true
+2025-03-06T20:15:18.0782328Z   clean: true
+2025-03-06T20:15:18.0782528Z   sparse-checkout-cone-mode: true
+2025-03-06T20:15:18.0782759Z   fetch-depth: 1
+2025-03-06T20:15:18.0782940Z   fetch-tags: false
+2025-03-06T20:15:18.0783130Z   show-progress: true
+2025-03-06T20:15:18.0783312Z   lfs: false
+2025-03-06T20:15:18.0783480Z   submodules: false
+2025-03-06T20:15:18.0783669Z   set-safe-directory: true
+2025-03-06T20:15:18.0784053Z env:
+2025-03-06T20:15:18.0784218Z   AWS_REGION:
+2025-03-06T20:15:18.0784399Z   AWS_ACCOUNT_ID:
+2025-03-06T20:15:18.0784575Z   ROLE_NAME:
+2025-03-06T20:15:18.0784755Z ##[endgroup]
+2025-03-06T20:15:18.3391605Z Syncing repository: bluesentry/ai_ml_competition_2025_0
+2025-03-06T20:15:18.3393374Z ##[group]Getting Git version info
+2025-03-06T20:15:18.3393983Z Working directory is '/home/runner/work/ai_ml_competition_2025_0/ai_ml_competition_2025_0'
+2025-03-06T20:15:18.3394646Z [command]/usr/bin/git version
+2025-03-06T20:15:18.3395797Z git version 2.48.1
+2025-03-06T20:15:18.3430820Z ##[endgroup]
+2025-03-06T20:15:18.3447031Z Temporarily overriding HOME='/home/runner/work/_temp/48edc16d-f2f8-463e-9dd9-8518e7b4c8ea' before making global git config changes
+2025-03-06T20:15:18.3448490Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-06T20:15:18.3463671Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/ai_ml_competition_2025_0/ai_ml_competition_2025_0
+2025-03-06T20:15:18.3502292Z Deleting the contents of '/home/runner/work/ai_ml_competition_2025_0/ai_ml_competition_2025_0'
+2025-03-06T20:15:18.3506060Z ##[group]Initializing the repository
+2025-03-06T20:15:18.3510730Z [command]/usr/bin/git init /home/runner/work/ai_ml_competition_2025_0/ai_ml_competition_2025_0
+2025-03-06T20:15:18.3591637Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-03-06T20:15:18.3592408Z hint: is subject to change. To configure the initial branch name to use in all
+2025-03-06T20:15:18.3592927Z hint: of your new repositories, which will suppress this warning, call:
+2025-03-06T20:15:18.3593293Z hint:
+2025-03-06T20:15:18.3593598Z hint: 	git config --global init.defaultBranch <name>
+2025-03-06T20:15:18.3593931Z hint:
+2025-03-06T20:15:18.3594227Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-03-06T20:15:18.3594729Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-03-06T20:15:18.3595125Z hint:
+2025-03-06T20:15:18.3595320Z hint: 	git branch -m <name>
+2025-03-06T20:15:18.3601463Z Initialized empty Git repository in /home/runner/work/ai_ml_competition_2025_0/ai_ml_competition_2025_0/.git/
+2025-03-06T20:15:18.3612618Z [command]/usr/bin/git remote add origin https://github.com/bluesentry/ai_ml_competition_2025_0
+2025-03-06T20:15:18.3647514Z ##[endgroup]
+2025-03-06T20:15:18.3647887Z ##[group]Disabling automatic garbage collection
+2025-03-06T20:15:18.3652394Z [command]/usr/bin/git config --local gc.auto 0
+2025-03-06T20:15:18.3682540Z ##[endgroup]
+2025-03-06T20:15:18.3683110Z ##[group]Setting up auth
+2025-03-06T20:15:18.3690954Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-06T20:15:18.3722999Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-06T20:15:18.4122826Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-06T20:15:18.4156278Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-06T20:15:18.4387894Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-03-06T20:15:18.4425808Z ##[endgroup]
+2025-03-06T20:15:18.4426221Z ##[group]Fetching the repository
+2025-03-06T20:15:18.4445407Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +af3fac9f3a95b44a58085b05048e2e7354d5bc70:refs/remotes/origin/main
+2025-03-06T20:15:19.0085250Z From https://github.com/bluesentry/ai_ml_competition_2025_0
+2025-03-06T20:15:19.0086320Z  * [new ref]         af3fac9f3a95b44a58085b05048e2e7354d5bc70 -> origin/main
+2025-03-06T20:15:19.0112393Z ##[endgroup]
+2025-03-06T20:15:19.0112968Z ##[group]Determining the checkout info
+2025-03-06T20:15:19.0114947Z ##[endgroup]
+2025-03-06T20:15:19.0120187Z [command]/usr/bin/git sparse-checkout disable
+2025-03-06T20:15:19.0165242Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-03-06T20:15:19.0193390Z ##[group]Checking out the ref
+2025-03-06T20:15:19.0198343Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+2025-03-06T20:15:19.0270100Z Switched to a new branch 'main'
+2025-03-06T20:15:19.0272909Z branch 'main' set up to track 'origin/main'.
+2025-03-06T20:15:19.0279496Z ##[endgroup]
+2025-03-06T20:15:19.0320813Z [command]/usr/bin/git log -1 --format=%H
+2025-03-06T20:15:19.0343628Z af3fac9f3a95b44a58085b05048e2e7354d5bc70
+2025-03-06T20:15:19.0556209Z ##[group]Run aws-actions/configure-aws-credentials@v2
+2025-03-06T20:15:19.0556527Z with:
+2025-03-06T20:15:19.0556721Z   role-to-assume: arn:aws:iam:::role/
+2025-03-06T20:15:19.0556970Z   audience: sts.amazonaws.com
+2025-03-06T20:15:19.0557204Z env:
+2025-03-06T20:15:19.0557379Z   AWS_REGION:
+2025-03-06T20:15:19.0557559Z   AWS_ACCOUNT_ID:
+2025-03-06T20:15:19.0557732Z   ROLE_NAME:
+2025-03-06T20:15:19.0557904Z ##[endgroup]
+2025-03-06T20:15:19.2246020Z ##[error]Input required and not supplied: aws-region
+2025-03-06T20:15:19.2255513Z (node:2022) NOTE: We are formalizing our plans to enter AWS SDK for JavaScript (v2) into maintenance mode in 2023.
+2025-03-06T20:15:19.2256156Z
+2025-03-06T20:15:19.2256447Z Please migrate your code to use AWS SDK for JavaScript (v3).
+2025-03-06T20:15:19.2257154Z For more information, check the migration guide at https://a.co/7PzMCcy
+2025-03-06T20:15:19.2257926Z (Use `node --trace-warnings ...` to show where the warning was created)
+2025-03-06T20:15:19.2402466Z Post job cleanup.
+2025-03-06T20:15:19.2841328Z Post job cleanup.
+2025-03-06T20:15:19.3793598Z [command]/usr/bin/git version
+2025-03-06T20:15:19.3832263Z git version 2.48.1
+2025-03-06T20:15:19.3877763Z Temporarily overriding HOME='/home/runner/work/_temp/87344958-75f6-4930-932c-f1f7d1aa8469' before making global git config changes
+2025-03-06T20:15:19.3879772Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-06T20:15:19.3884330Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/ai_ml_competition_2025_0/ai_ml_competition_2025_0
+2025-03-06T20:15:19.3925039Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-06T20:15:19.3960270Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-06T20:15:19.4203607Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-06T20:15:19.4225352Z http.https://github.com/.extraheader
+2025-03-06T20:15:19.4237621Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-03-06T20:15:19.4268539Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-06T20:15:19.4610183Z Cleaning up orphan processes

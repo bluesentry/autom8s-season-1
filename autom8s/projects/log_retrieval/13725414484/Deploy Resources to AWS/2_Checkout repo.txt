@@ -1,0 +1,71 @@
+2025-03-07T16:55:16.9720104Z ##[group]Run actions/checkout@v4
+2025-03-07T16:55:16.9721030Z with:
+2025-03-07T16:55:16.9721543Z   repository: bluesentry/ai_ml_competition_2025_0
+2025-03-07T16:55:16.9722352Z   token: ***
+2025-03-07T16:55:16.9722942Z   ssh-strict: true
+2025-03-07T16:55:16.9723382Z   ssh-user: git
+2025-03-07T16:55:16.9723912Z   persist-credentials: true
+2025-03-07T16:55:16.9724409Z   clean: true
+2025-03-07T16:55:16.9724845Z   sparse-checkout-cone-mode: true
+2025-03-07T16:55:16.9725369Z   fetch-depth: 1
+2025-03-07T16:55:16.9725796Z   fetch-tags: false
+2025-03-07T16:55:16.9726247Z   show-progress: true
+2025-03-07T16:55:16.9726704Z   lfs: false
+2025-03-07T16:55:16.9727127Z   submodules: false
+2025-03-07T16:55:16.9727575Z   set-safe-directory: true
+2025-03-07T16:55:16.9728298Z env:
+2025-03-07T16:55:16.9728730Z   AWS_REGION: us-east-1
+2025-03-07T16:55:16.9729208Z   AWS_ACCOUNT_ID: 704855531002
+2025-03-07T16:55:16.9729760Z   ROLE_NAME: Github_Actions_Super_Mario_OIDC_Role
+2025-03-07T16:55:16.9730348Z ##[endgroup]
+2025-03-07T16:55:17.1659309Z Syncing repository: bluesentry/ai_ml_competition_2025_0
+2025-03-07T16:55:17.1661226Z ##[group]Getting Git version info
+2025-03-07T16:55:17.1662166Z Working directory is '/home/runner/work/ai_ml_competition_2025_0/ai_ml_competition_2025_0'
+2025-03-07T16:55:17.1663558Z [command]/usr/bin/git version
+2025-03-07T16:55:17.1771090Z git version 2.48.1
+2025-03-07T16:55:17.1800986Z ##[endgroup]
+2025-03-07T16:55:17.1814999Z Temporarily overriding HOME='/home/runner/work/_temp/d8b4cee2-6500-46a5-b866-ee1a131dab9a' before making global git config changes
+2025-03-07T16:55:17.1817959Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-07T16:55:17.1829946Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/ai_ml_competition_2025_0/ai_ml_competition_2025_0
+2025-03-07T16:55:17.1869320Z Deleting the contents of '/home/runner/work/ai_ml_competition_2025_0/ai_ml_competition_2025_0'
+2025-03-07T16:55:17.1874077Z ##[group]Initializing the repository
+2025-03-07T16:55:17.1879117Z [command]/usr/bin/git init /home/runner/work/ai_ml_competition_2025_0/ai_ml_competition_2025_0
+2025-03-07T16:55:17.1958309Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-03-07T16:55:17.1959498Z hint: is subject to change. To configure the initial branch name to use in all
+2025-03-07T16:55:17.1960729Z hint: of your new repositories, which will suppress this warning, call:
+2025-03-07T16:55:17.1961437Z hint:
+2025-03-07T16:55:17.1961968Z hint: 	git config --global init.defaultBranch <name>
+2025-03-07T16:55:17.1962580Z hint:
+2025-03-07T16:55:17.1963697Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-03-07T16:55:17.1964649Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-03-07T16:55:17.1965392Z hint:
+2025-03-07T16:55:17.1965803Z hint: 	git branch -m <name>
+2025-03-07T16:55:17.1970064Z Initialized empty Git repository in /home/runner/work/ai_ml_competition_2025_0/ai_ml_competition_2025_0/.git/
+2025-03-07T16:55:17.1981032Z [command]/usr/bin/git remote add origin https://github.com/bluesentry/ai_ml_competition_2025_0
+2025-03-07T16:55:17.2018291Z ##[endgroup]
+2025-03-07T16:55:17.2019735Z ##[group]Disabling automatic garbage collection
+2025-03-07T16:55:17.2023440Z [command]/usr/bin/git config --local gc.auto 0
+2025-03-07T16:55:17.2052958Z ##[endgroup]
+2025-03-07T16:55:17.2054463Z ##[group]Setting up auth
+2025-03-07T16:55:17.2060763Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-07T16:55:17.2092545Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-07T16:55:17.2432970Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-07T16:55:17.2462095Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-07T16:55:17.2692143Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-03-07T16:55:17.2738373Z ##[endgroup]
+2025-03-07T16:55:17.2746473Z ##[group]Fetching the repository
+2025-03-07T16:55:17.2747940Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +385f0ccd9022f65b262b86f23ecbfa3ed6207bc2:refs/remotes/origin/gha
+2025-03-07T16:55:17.5551455Z From https://github.com/bluesentry/ai_ml_competition_2025_0
+2025-03-07T16:55:17.5553433Z  * [new ref]         385f0ccd9022f65b262b86f23ecbfa3ed6207bc2 -> origin/gha
+2025-03-07T16:55:17.5579262Z ##[endgroup]
+2025-03-07T16:55:17.5580339Z ##[group]Determining the checkout info
+2025-03-07T16:55:17.5581756Z ##[endgroup]
+2025-03-07T16:55:17.5586686Z [command]/usr/bin/git sparse-checkout disable
+2025-03-07T16:55:17.5628405Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-03-07T16:55:17.5656461Z ##[group]Checking out the ref
+2025-03-07T16:55:17.5660065Z [command]/usr/bin/git checkout --progress --force -B gha refs/remotes/origin/gha
+2025-03-07T16:55:17.5726655Z Switched to a new branch 'gha'
+2025-03-07T16:55:17.5730037Z branch 'gha' set up to track 'origin/gha'.
+2025-03-07T16:55:17.5736168Z ##[endgroup]
+2025-03-07T16:55:17.5768036Z [command]/usr/bin/git log -1 --format=%H
+2025-03-07T16:55:17.5790802Z 385f0ccd9022f65b262b86f23ecbfa3ed6207bc2
