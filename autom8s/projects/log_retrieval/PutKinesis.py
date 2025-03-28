@@ -6,8 +6,11 @@ import zipfile
 client = boto3.client('kinesis') 
 print ('got client')
 
+stream_name = 'mikeo-test'
+
 # Specify the path to your ZIP file
-zip_file_path = '13724811047.zip'
+workflow_id = '13724811047'
+zip_file_path = f'{workflow_id}.zip'
 print ('going to open %s' % zip_file_path)
 
 # Open the ZIP file
@@ -17,27 +20,28 @@ with zipfile.ZipFile(zip_file_path, 'r') as zip_ref:
         print ('file: %s' % file)
         # Read a specific file from the ZIP archive
         with zip_ref.open(file) as file:
-            partKey = file.name
-            print ('partKey: %s' % partKey)
+            partition_key = file.name
             content = file.read()
-            # print ('content: %s' % content)
             for line in content.splitlines():
                 # Split based on the first space
                 try:
-                    thetime, message = line.strip().decode('utf-8').split(' ', 1)
+                    msg_time, message = line.strip().decode('utf-8').split(' ', 1)
                     data = {
-                        'timestamp': thetime,
-                        'message': message
+                        "workflow_id": workflow_id,
+                        'job_name': partition_key,
+                        'msg_time': msg_time,
+                        'msg': message
                     }
                     record = json.dumps(data)
         # https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kinesis/client/put_records.html
         # https://docs.aws.amazon.com/code-library/latest/ug/python_3_kinesis_code_examples.html
                     response = client.put_record(
-                        StreamName='mikeo-test',
-                        PartitionKey=partKey,
+                        StreamName=stream_name,
+                        PartitionKey=partition_key,
                         Data=record
                     );
-                    print ('response: %s' % response)
+                    # print ('response: %s' % response)
                 except:
                     print ('error: %s' % line)
+            print ('finished processing file: %s' % file.name)
 client.close()
