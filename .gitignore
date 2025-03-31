@@ -175,3 +175,6 @@ cython_debug/
 
 # GitHub personal access token
 .github/token.txt
+
+# Mac
+.DS_Store
