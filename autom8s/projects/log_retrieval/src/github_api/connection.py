@@ -89,20 +89,46 @@ class GitHubAPIConnection:
 
         return self._cached_repos
 
-    def get_repo(self, repo_name: str) -> Repository:
-        """Return a repository by name, or None if not found."""
+    def get_repo(self, repo_name: str) -> Repository | None:
+        """Return a repository by name, or None if not found.
+
+        Args:
+            repo_name: The name of the repository to retrieve.
+
+        Returns:
+            The repository object, or None if not found.
+        """
         if cached_repo := self._cached_repos.get(repo_name):
             return cached_repo
         result = self.repos.get(repo_name)
         self._cached_repos[repo_name] = result
         return result
 
-    def get_repos(self, repo_names: list[str]) -> list[Repository]:
-        """Return a dictionary of repositories by name, or None if not found."""
+    def get_repos(self, repo_names: list[str]) -> dict[str, Repository | None]:
+        """Return a dictionary of repositories by name, or None if not found.
+
+        Args:
+            repo_names: The names of the repositories to retrieve.
+
+        Returns:
+            Dictionary of repository objects with None values for missing repositories.
+        """
 
         return {name: self.repos.get(name) for name in repo_names}
 
     def get_workflow_logs(self, workflow: GitHubWorkflow):
+        """Retrieve the logs for a workflow.
+
+        Args:
+            workflow: The workflow to retrieve logs for.
+
+        Returns:
+            The response object from the GitHub API.
+
+        The GitHub API lacks support for retrieving workflow logs directly. Instead, we
+        use the python requests library to make a GET request to the GitHub API endpoint
+        with the relevant auth headers and workflow ID.
+        """
         result = requests.get(
             f"{workflow.url}/logs",
             headers=self.headers,
