@@ -1,11 +1,11 @@
 import logging
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from functools import cached_property
 
 import requests
 
 # Authentication is defined via github.Auth
-from github import Auth, AuthenticatedUser, Github, Repository
+from github import Auth, AuthenticatedUser, Github
 from github.Workflow import Workflow as GitHubWorkflow
 from pydantic import BaseModel
 
@@ -51,7 +51,9 @@ class GitHubAPIConnection:
 
     _token: str
     _session: str
-    _cached_repos: dict[str, Repository] = field(default_factory=dict)
+
+    def __post_init__(self):
+        self._cached_repos: dict[str, Repository] = {}
 
     @classmethod
     def from_token(cls, token: str):
@@ -70,10 +72,10 @@ class GitHubAPIConnection:
     def headers(self):
         return {
             "Accept": "application/vnd.github+json",
-            "Authentication": f"Bearer {self._session.requester.auth.token}",
+            "Authorization": f"Bearer {self._token}",
             "X-GitHub-Api-Version": "2022-11-28",
         }
-x
+
     @cached_property
     def user(self) -> AuthenticatedUser:
         return self._session.get_user()
@@ -102,7 +104,8 @@ x
 
     def get_workflow_logs(self, workflow: GitHubWorkflow):
         result = requests.get(
-            f"{workflow.url}/logs", headers=self.headers, params={"output": "file.zip"}
+            f"{workflow.url}/logs",
+            headers=self.headers,
+            params={"output": f"{workflow.id}.zip"},
         )
-        breakpoint()
         return result
