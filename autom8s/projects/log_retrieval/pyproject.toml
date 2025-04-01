@@ -16,7 +16,7 @@ classifiers = [
 ]
 readme = "README.md"
 
-dependencies = ["PyGithub~=2.6", "pandas~=2.2", "pydantic~=2.10"]
+dependencies = ["boto3~=1.37", "pandas~=2.2", "pydantic~=2.10", "PyGithub~=2.6"]
 
 [project.optional-dependencies]
 dev = [
